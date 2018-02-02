@@ -18,10 +18,10 @@
 
             <oui-datagrid data-rows="BillingAccountBillCtrl.consumption.raw">
                 <oui-column data-title="'telephony_group_billing_bill_date' | translate" data-property="date" data-sortable="desc">
-                    {{$row.date | date}}
+                    <span data-ng-bind="$row.date | date"></span>
                 </oui-column>
                 <oui-column data-title="'telephony_group_billing_bill_amount' | translate" data-property="price.value" data-sortable>
-                    {{$row.price.text}}
+                    <span data-ng-bind="$row.price.text"></span>
                 </oui-column>
                 <oui-column data-title="'telephony_group_billing_bill_paid' | translate" data-property="status" data-sortable>
                     <span class="text-capitalize"
@@ -30,19 +30,16 @@
                 </oui-column>
 
                 <oui-action-menu data-align="end" data-compact>
-                    <oui-action-menu-item
-                            data-text="{{'telephony_group_billing_bill_download_pdf' | translate}}"
-                            on-click="BillingAccountBillCtrl.download($row, 'pdf')">
+                    <oui-action-menu-item data-text="{{'telephony_group_billing_bill_download_pdf' | translate}}"
+                                          on-click="BillingAccountBillCtrl.download($row, 'pdf')">
                     </oui-action-menu-item>
 
-                    <oui-action-menu-item
-                            data-text="{{'telephony_group_billing_bill_download_csv_emited' | translate}}"
-                            on-click="BillingAccountBillCtrl.download($row, 'csv')">
+                    <oui-action-menu-item data-text="{{'telephony_group_billing_bill_download_csv_emited' | translate}}"
+                                          on-click="BillingAccountBillCtrl.download($row, 'csv')">
                     </oui-action-menu-item>
 
-                    <oui-action-menu-item
-                            data-text="{{'telephony_group_billing_bill_download_csv_received' | translate}}"
-                            on-click="BillingAccountBillCtrl.download($row, 'received.csv')">
+                    <oui-action-menu-item data-text="{{'telephony_group_billing_bill_download_csv_received' | translate}}"
+                                          on-click="BillingAccountBillCtrl.download($row, 'received.csv')">
                     </oui-action-menu-item>
                 </oui-action-menu>
             </oui-datagrid>
